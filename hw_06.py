@@ -24,7 +24,12 @@ class Fib():
         self.value = value
 
     def next(self):
-        "*** ТВОЙ КОД ЗДЕСЬ ***"
+        if self.value == 0:
+            total = Fib(1)
+        else:
+            total = Fib(self.value + self.old_value)
+        total.old_value = self.value
+        return total
 
     def __repr__(self):
         return str(self.value)
